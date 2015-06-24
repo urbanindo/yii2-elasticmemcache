@@ -29,6 +29,27 @@ to the require section of your `composer.json` file.
 ```php
 'components' => [
     'cache' => [
+	    'class' => UrbanIndo\Yii2\ElasticMemcache\Cache::class,
+	    'serverConfigs' => [
+	        [
+	                'host' => 'CacheClusterConfiguration1.cache.amazonaws.com', // modify this
+	                'port' => 11211,
+	                'weight' => 60,
+	        ],
+	        [
+	                'host' => 'CacheClusterConfiguration2.cache.amazonaws.com', // modify this
+	                'port' => 11211,
+	                'weight' => 40,
+	        ]
+	    ],
+	    'cache' => [
+	    	'class' => yii\caching\FileCache::class
+	    ]
     ]
 ]
 ```
+
+# Running Test
+- copy test/template-local.php to local.php
+- modify it to your aws elasticache configuration
+- run `vendor/bin/phpunit --bootstrap test/bootstrap.php test/CacheTest`
