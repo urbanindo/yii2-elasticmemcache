@@ -1,4 +1,5 @@
 <?php
+
 global $SETTINGS;
 $SETTINGS = [
     'class' => UrbanIndo\Yii2\ElasticMemcache\Cache::class,
