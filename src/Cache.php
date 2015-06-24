@@ -35,8 +35,8 @@ class Cache extends \yii\caching\MemCache {
      * Initialize the component.
      */
     public function init() {
-        $this->setServers($this->loadNodesConfigurations());
         parent::init();
+        $this->setServers($this->loadNodesConfigurations());
     }
 
     /**
@@ -109,7 +109,7 @@ class Cache extends \yii\caching\MemCache {
         }
         fclose($fp);
         return array_map(function($configline) use ($template) {
-            list ($host,, $port) = explode($configline);
+            list ($host, , $port) = explode('|', $configline);
             return array_merge($template, [
                 'host' => $host,
                 'port' => $port,
