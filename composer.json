@@ -1,0 +1,26 @@
+{
+    "name": "urbanindo/yii2-elasticmemcache",
+    "description": "Yii2 component for elastic memcache without node discovery plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Petra Barus",
+            "email": "petra.barus@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0",
+        "yiisoft/yii2": "*",
+        "aws/aws-sdk-php": ">=2.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "UrbanIndo\\Yii2\\ElasticMemcache\\": "src/"
+        }
+    }
+
+}
