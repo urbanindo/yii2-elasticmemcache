@@ -40,8 +40,8 @@ class Cache extends \yii\caching\MemCache
      */
     public function init()
     {
-        parent::init();
         $this->setServers($this->loadNodesConfigurations());
+        parent::init();
     }
 
     /**
