@@ -94,7 +94,7 @@ class Cache extends \yii\caching\MemCache
                     $cachedConfig = array_merge($cachedConfig, $config);
                 }
                 if ($cacheable) {
-                    $this->getCache()->set('cache', $cachedConfig, $this->cacheTime);
+                    $this->getCache()->set('clusters', $cachedConfig, $this->cacheTime);
                 }
             }
 
